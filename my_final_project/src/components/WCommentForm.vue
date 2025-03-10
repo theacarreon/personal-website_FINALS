@@ -1,20 +1,17 @@
 <template>
-    <div>
-      <h2>What is your Feeling? Leave a comment!</h2>
-      <form @submit.prevent="submitComment">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" v-model="name" required class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="comment">Comment:</label>
-          <textarea id="comment" v-model="comment" required class="form-control"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <div v-if="submissionStatus" class="mt-2">
-          {{ submissionStatus }}
-        </div>
-      </form>
+    <div class="comment-form">
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="form-control">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control">
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" class="form-control" rows="4"></textarea>
+
+        <button type="submit" class="btn">Submit Comment</button>
+    </form>
     </div>
 </template>
 
@@ -58,24 +55,22 @@ async function submitComment() {
 
 </script>
 <style>
-  label {
+ .comment-form {
+    background-color: #333; /* Dark background for the form */
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 50px auto; /* Center the form */
+    box-shadow: 0 0 20px rgb(255, 148, 203), /* Purple/pink glow */
+                0 0 10px rgba(0, 150, 0, 0.866); /* Green glow */
+    text-align: left; /* Align labels and inputs to the left */
+    color: #fff; /* White text */
+    font-family: 'Dancing Script', sans-serif; /* Add your retro font */
+}
+
+.comment-form label {
     display: block;
     margin-bottom: 0.5rem;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btn {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    color: #fff; /* White label text */
+}
 </style>

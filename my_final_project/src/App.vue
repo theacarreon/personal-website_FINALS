@@ -7,6 +7,8 @@
     <ItExperience />
     <Hobbies />
     <Gallery />
+    <WCommentForm />
+    <WComment />
     <Footer />
   </div>
 </template>

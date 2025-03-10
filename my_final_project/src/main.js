@@ -11,7 +11,10 @@ import Education from './components/Education.vue';
 import ItExperience from './components/ItExperience.vue';
 import Hobbies from './components/Hobbies.vue';
 import Gallery from './components/Gallery.vue';
+import WCommentForm from './components/WCommentForm.vue';
+import WComment from './components/WComment.vue';
 import Footer from './components/Footer.vue';
+
 
 const app = createApp(App)
 app.component('Navbar', Navbar)
@@ -21,5 +24,7 @@ app.component('Education', Education)
 app.component('ItExperience', ItExperience)
 app.component('Hobbies', Hobbies)
 app.component('Gallery', Gallery)
+app.component('WCommentForm', WCommentForm)
+app.component('WComment', WComment)
 app.component('Footer', Footer)
 app.mount('#app');
