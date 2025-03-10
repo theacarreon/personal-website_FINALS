@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Navbar/>
-    <Title/>
-    <About/>
-    <Education/>
-    <ItExperience/>
-    <Hobbies/>
-    <Gallery/>
-    <Footer/>
+    <Navbar />
+    <Title />
+    <About />
+    <Education />
+    <ItExperience />
+    <Hobbies />
+    <Gallery />
+    <Footer />
   </div>
 </template>
 
