@@ -29,7 +29,6 @@ html {
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
-
 .navbar {
     background-color: #1f7a1f !important; /* Green background */
     z-index: 1000;

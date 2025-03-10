@@ -1,12 +1,16 @@
 <template>
   <div>
-    <Navbar />
-    <router-view></router-view>
-    <Footer />
+    <Navbar/>
+    <Title/>
+    <About/>
+    <Education/>
+    <ItExperience/>
+    <Hobbies/>
+    <Gallery/>
+    <Footer/>
   </div>
 </template>
 
 <script setup>
-import Navbar from './components/Navbar.vue';
-import Footer from './components/Footer.vue';
+
 </script>
