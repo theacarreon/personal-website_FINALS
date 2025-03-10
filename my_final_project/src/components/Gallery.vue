@@ -4,26 +4,34 @@
         <div class="gallery-pics">
           <div class="gal-img">
             <figure>
-              <img src="images/photo_2025-03-06_00-47-22.jpg" alt="caelus">
+              <img :src="image1" alt="caelus">
               <figcaption>This is my AUsome son,<br> Caelus.</figcaption>
           </figure>
           <figure>
-              <img src="images/photo_2025-03-06_01-00-40.jpg" alt="T&T">
+              <img :src="image2" alt="T&T">
               <figcaption>2024, Japan - <br> Me and my Partner</figcaption>
           </figure>
           <figure>
-              <img src="images/jin.jpg" alt="Seokjin">
+              <img :src="image3" alt="Seokjin">
               <figcaption>My BTS Bias,<br> Kim SeokJin</figcaption>
           </figure>
           <figure>
-              <img src="images/dk.jpg" alt="Dokyeom">
+              <img :src="image4" alt="Dokyeom">
               <figcaption>My SVT Bias,<br> Lee Seokmin</figcaption>
           </figure>
           <figure>
-              <img src="images/pbg.jpg" alt="BoGum">
+              <img :src="image5" alt="BoGum">
               <figcaption>My Fav Actor,<br> Park Bo Gum</figcaption>
           </figure>
           </div>
         </div>
     </section>
 </template>
+
+<script setup>
+import image1 from '@/assets/images/photo_2025-03-06_00-47-22.jpg';
+import image2 from '@/assets/images/photo_2025-03-06_01-00-40.jpg';
+import image3 from '@/assets/images/jin.jpg';
+import image4 from '@/assets/images/dk.jpg';
+import image5 from '@/assets/images/pbg.jpg';
+</script>
