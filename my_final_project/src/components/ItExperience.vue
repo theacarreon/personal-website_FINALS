@@ -3,7 +3,7 @@
         <h2>IT Experience</h2>
         <div class="experience-container">
             <div class="experience-item">
-                <img src="assets/images/dcvms.png" alt="DCVMS">
+                <img src="DCVMS" alt="DCVMS">
                   <div class="experience-desc">
                     <p>DCV-MS is our PBL Project which is a Dress Code Violation Management System.</p>
                     <p>We automated the process of Blue Slip Issuance of APC.</p>
@@ -13,3 +13,7 @@
           </div>
     </section>
 </template>
+
+<script setup>
+import DCVMS from '@src/assets/images/dcvms.png';
+</script>

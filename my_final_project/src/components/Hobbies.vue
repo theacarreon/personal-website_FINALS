@@ -3,10 +3,10 @@
         <h2>Hobbies and Interests</h2>
         <div class="hobbies-interest-con">
           <div class="hob-in-img">
-            <img src="assets/images/4f0f4ffe435e12180468fdb902432499.png" alt="Matilda">
-            <img src="assets/images/Cats.jpg" alt="Cats">
-            <img src="assets/images/Hamilton-Logo.jpg" alt="Hamilton">
-            <img src="assets/images/p5620_v_v13_as.jpg" alt="SoundOfMusic">
+            <img src="matilda" alt="Matilda">
+            <img src="cats" alt="Cats">
+            <img src="Hamilton" alt="Hamilton">
+            <img src="SOM" alt="SoundOfMusic">
           </div>
             <div class="hob-in-desc">
               <p>I like watching musical plays. My long lost dream was to become a theater actress and everytime I watch theater plays, I find myself crying HAHA.<br>
@@ -15,3 +15,10 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import matilda from '@src/assets/images/4f0f4ffe435e12180468fdb902432499.png';
+import cats from '@src/assets/images/Cats.jpg';
+import Hamilton from '@src/assets/images/Hamilton-Logo.jpg';
+import SOM from '@src/assets/images/p5620_v_v13_as.jpg;
+</script>
