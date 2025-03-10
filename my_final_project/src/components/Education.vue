@@ -2,11 +2,14 @@
     <section id="Education">
       <h2>Education</h2>
       <table class="education-table">
+      <thead>
       <tr>
         <th>Year</th>
         <th>School</th>
         <th>Degree</th>
       </tr>
+      </thead>
+      <tbody>
       <tr>
         <td>2022 - Present</td>
         <td>
@@ -35,6 +38,7 @@
          Citiville Christian Academy</td>
         <td>Elementary</td>
       </tr>
+      </tbody>
       </table>
     </section>
 </template>
