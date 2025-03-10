@@ -14,12 +14,12 @@ import Gallery from './components/Gallery.vue';
 import Footer from './components/Footer.vue';
 
 const app = createApp(App)
-app.component('navbar', Navbar)
-app.component('title', Title)
-app.component('about', About)
-app.component('education', Education)
-app.component('itexperience', ItExperience)
-app.component('hobbies', Hobbies)
-app.component('gallery', Gallery)
-app.component('footer', Footer)
+app.component('Navbar', Navbar)
+app.component('Title', Title)
+app.component('About', About)
+app.component('Education', Education)
+app.component('ItExperience', ItExperience)
+app.component('Hobbies', Hobbies)
+app.component('Gallery', Gallery)
+app.component('Footer', Footer)
 app.mount('#app');
