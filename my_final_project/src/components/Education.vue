@@ -41,8 +41,8 @@
 
 
 <script setup>
-import image1 from '@src/assets/images/APC Logo.png';
-import image2 from '@src/assets/images/cvsu-logo.jpg';
-import image3 from '@src/assets/images/bnhs-logo.jpg';
-import image4 from '@src/assets/images/cca-logo.jpg';
+import image1 from '@/assets/images/APC Logo.png';
+import image2 from '@/assets/images/cvsu-logo.jpg';
+import image3 from '@/assets/images/bnhs-logo.jpg';
+import image4 from '@/assets/images/cca-logo.jpg';
 </script>

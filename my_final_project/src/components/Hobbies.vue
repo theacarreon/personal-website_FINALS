@@ -17,8 +17,8 @@
 </template>
 
 <script setup>
-import matilda from '@src/assets/images/4f0f4ffe435e12180468fdb902432499.png';
-import cats from '@src/assets/images/Cats.jpg';
-import Hamilton from '@src/assets/images/Hamilton-Logo.jpg';
-import SOM from '@src/assets/images/p5620_v_v13_as.jpg;
+import matilda from '@/assets/images/4f0f4ffe435e12180468fdb902432499.png';
+import cats from '@/assets/images/Cats.jpg';
+import Hamilton from '@/assets/images/Hamilton-Logo.jpg';
+import SOM from '@/assets/images/p5620_v_v13_as.jpg';
 </script>

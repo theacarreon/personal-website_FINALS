@@ -13,7 +13,7 @@
   </template>
 
 <script setup>
-import Profile1 from '@src/assets/images/thea.png';
+import Profile1 from '@/assets/images/thea.png';
 </script>
 
   

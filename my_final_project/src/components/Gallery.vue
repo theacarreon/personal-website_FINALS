@@ -29,9 +29,9 @@
 </template>
 
 <script setup>
-import image1 from '@src/assets/images/photo_2025-03-06_00-47-22.jpg';
-import image2 from '@src/assets/images/photo_2025-03-06_01-00-40.jpg';
-import image3 from '@src/assets/images/jin.jpg';
-import image4 from '@src/assets/images/dk.jpg';
-import image5 from '@src/assets/images/pbg.jpg';
+import image1 from '@/assets/images/photo_2025-03-06_00-47-22.jpg';
+import image2 from '@/assets/images/photo_2025-03-06_01-00-40.jpg';
+import image3 from '@/assets/images/jin.jpg';
+import image4 from '@/assets/images/dk.jpg';
+import image5 from '@/assets/images/pbg.jpg';
 </script>

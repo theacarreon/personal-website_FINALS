@@ -15,5 +15,5 @@
 </template>
 
 <script setup>
-import DCVMS from '@src/assets/images/dcvms.png';
+import DCVMS from '@/assets/images/dcvms.png';
 </script>
