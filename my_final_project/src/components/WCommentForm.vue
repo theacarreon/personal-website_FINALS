@@ -29,7 +29,7 @@
 
     try {
       const { error } = await supabase
-        .from(tableName) // Use tableName variable here
+        .from(tableName) 
         .insert([{ name: name.value, comment: comment.value }]); 
 
       if (error) {

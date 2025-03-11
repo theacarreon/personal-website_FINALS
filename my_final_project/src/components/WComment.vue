@@ -17,7 +17,7 @@
   
   async function getComments() {
     const { data, error } = await supabase
-    .from("comments")
+    .from("WComments")
     .select()
     .order("created_at", { ascending: false }); // Fetch newest comments first
   
