@@ -1,51 +1,61 @@
 <template>
   <div class="comment-form">
+    <h1>What is your Feeling? <br>Leave a Comment!</h1>
     <form @submit.prevent="submitComment">
-      <h1>What is your feeling? Leave a Comment!</h1>
-      <label for="name">Name:</label>
-      <input type="text" id="name" class="form-control" v-model="name"> 
-      <label for="comment">Comment:</label>
-      <textarea id="comment" class="form-control" rows="4" v-model="comment"></textarea> 
-
-      <button type="submit" class="btn">Submit Comment</button> 
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" v-model="name" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea id="comment" v-model="comment" required class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <div v-if="submissionStatus" class="mt-2">
+        {{ submissionStatus }}
+      </div>
     </form>
   </div>
 </template>
 
+
 <script setup>
-  import { ref } from 'vue';
-  import { supabase } from '../lib/supabaseClient'
+import { ref } from 'vue';
+import { supabase } from '../lib/supabaseClient'
 
-  const name = ref('');
-  const comment = ref('');
-  const submissionStatus = ref(null);
 
-  const tableName = 'WComments'; 
+const name = ref('');
+const comment = ref('');
+const submissionStatus = ref(null);
 
-  const emit = defineEmits(["comment-submitted"]);
+// Your Supabase URL and Key - IMPORTANT!
+const tableName = 'WComments'; // Name of your Supabase table
 
-  async function submitComment() {
-    submissionStatus.value = "Submitting...";
+const emit = defineEmits(["comment-submitted"]);
 
-    try {
-      const { error } = await supabase
-        .from(tableName) 
-        .insert([{ name: name.value, comment: comment.value }]); 
+async function submitComment() {
+submissionStatus.value = "Submitting...";
 
-      if (error) {
-        console.error("Error inserting comment:", error);
-        submissionStatus.value = "Error submitting comment. Please try again.";
-      } else {
-        submissionStatus.value = "Comment submitted successfully!";
-        name.value = ""; 
-        comment.value = "";
-        emit("comment-submitted"); 
-      }
-    } catch (err) {
-      console.error("An unexpected error occurred:", err);
-      submissionStatus.value = "An unexpected error occurred. Please try again.";
-    }
+try {
+  const { error } = await supabase
+    .from("WComments")
+    .insert([{ name: name.value, comment: comment.value }]);
+
+  if (error) {
+    console.error("Error inserting comment:", error);
+    submissionStatus.value = "Error submitting comment. Please try again.";
+  } else {
+    submissionStatus.value = "Comment submitted successfully!";
+    name.value = ""; 
+    comment.value = "";
+    emit("comment-submitted"); // Notify parent component to refresh
   }
+} catch (err) {
+  console.error("An unexpected error occurred:", err);
+  submissionStatus.value = "An unexpected error occurred. Please try again.";
+}
+}
+
 </script>
 
 <style scoped>
@@ -55,13 +65,12 @@
   background-color: rgba(82, 82, 82, 0.5);
   border-radius: 15px;
   padding: 40px;
-  max-width: 450px;
+  max-width: 500px;
   margin: 50px auto;
   box-shadow: 0 0 20px rgb(255, 148, 203), 0 0 10px rgba(0, 150, 0, 0.866);
   text-align: center;
   color: #fff;
-  font-family: 'Dancing Script', sans-serif;
-  font-weight: bolder;
+  font-family: 'Lilita One', sans-serif;
 }
 
 .comment-form label {
@@ -101,6 +110,9 @@
 }
 
 .comment-form h1 {
+  padding-right: 30px;
   font-size: 25px;
+  font-family: 'Dancing Script';
+  font-weight: bolder;
 }
 </style>
