@@ -38,7 +38,7 @@ submissionStatus.value = "Submitting...";
 
 try {
   const { error } = await supabase
-    .from("WComments")
+    .from("wcomments")
     .insert([{ name: name.value, comment: comment.value }]);
 
   if (error) {

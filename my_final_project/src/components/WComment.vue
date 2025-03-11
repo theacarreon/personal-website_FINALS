@@ -1,11 +1,14 @@
 <template>
-  <div class="comments">
-  <h1>Comments</h1>
-  <ul>
-    <li v-for="comment in comments" :key="comment.id">
-      {{ comment.name }}: {{ comment.comment || "No comment provided" }}
-    </li>
-  </ul>
+  <div class="comments-container">
+    <h1 class="comments-title">Comments</h1>
+    <div class="comments-body">
+      <ul>
+        <li v-for="comment in comments" :key="comment.id">
+          <span class="comment-name">{{ comment.name }}:</span> 
+          <span class="comment-text">{{ comment.comment || "No comment provided" }}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -16,7 +19,7 @@ import { supabase } from "../lib/supabaseClient";
 const comments = ref([]);
 
 async function getComments() {
-  const { data, error } = await supabase.from("WComments").select();
+  const { data, error } = await supabase.from("wcomments").select();
 
   if (error) {
     console.error("Error fetching comments:", error);
@@ -30,29 +33,51 @@ onMounted(() => {
 });
 
 </script>
-  
-  <style>
 
-.comments {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
-  gap: 10px; /* Adjust spacing between comments */
-  display: flex;
-  align-items: center; 
+<style>
+.comments-container {
   background-color: rgba(82, 82, 82, 0.5);
   border-radius: 15px;
   padding: 40px;
-  max-width: auto;
+  max-width: 800px; /* Adjust width */
   margin: 50px auto;
   box-shadow: 0 0 10px rgba(0, 150, 0, 0.866);
-  text-align: center;
   color: #fff;
-  font-family: 'Dancing Script', sans-serif;
   font-weight: bolder;
+  text-align: center;
 }
 
-.comments h1 {
-  font-size: 25px;
+.comments-title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Dancing Script', sans-serif;
+  margin-bottom: 10px; /* Adds spacing */
   text-align: center;
+}
+
+.comments-body {
+  font-size: 15px;
+  font-family: 'Lilita One';
+  text-align: left;
+}
+
+.comments-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comments-body li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(227, 227, 227, 0.2);
+}
+
+.comment-name {
+  font-weight: normal;
+}
+
+.comment-text {
+  font-weight: normal;
 }
   </style>
