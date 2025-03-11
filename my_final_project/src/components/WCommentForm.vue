@@ -1,12 +1,8 @@
 <template>
     <div class="comment-form">
-    <form>
+    <form @submit.prevent="submitComment">
         <label for="name">Name:</label>
         <input type="text" id="name" class="form-control">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" class="form-control">
-
         <label for="comment">Comment:</label>
         <textarea id="comment" class="form-control" rows="4"></textarea>
 
@@ -54,23 +50,42 @@ async function submitComment() {
 }
 
 </script>
-<style>
+
+<style scoped>
  .comment-form {
-    background-color: #333; /* Dark background for the form */
+    background-color: #525252; /* Dark background for the form */
     border-radius: 15px;
     padding: 40px;
-    max-width: 600px;
+    max-width: 400px;
     margin: 50px auto; /* Center the form */
     box-shadow: 0 0 20px rgb(255, 148, 203), /* Purple/pink glow */
                 0 0 10px rgba(0, 150, 0, 0.866); /* Green glow */
-    text-align: left; /* Align labels and inputs to the left */
+    text-align: center;
     color: #fff; /* White text */
-    font-family: 'Dancing Script', sans-serif; /* Add your retro font */
+    font-family: 'Dancing Script', sans-serif; 
+    height: 300px;
 }
 
 .comment-form label {
     display: block;
     margin-bottom: 0.5rem;
     color: #fff; /* White label text */
+}
+
+.btn {
+  display: block;
+  margin: 20px auto 0; /* Center the button */
+  padding: 10px 20px;
+  background-color: #030303; /* Semi-dark background */
+  color: white;
+  border: 1px solid rgba(0, 150, 0, 0.866); /* Neon green border */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.sbtn:hover {
+  background-color: #555;
 }
 </style>
